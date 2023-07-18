@@ -1,8 +1,6 @@
 //Function to make the url to be sent the request, and return the url
 module.exports = function urlConstructor(
   baseURL,
-  isById,
-  id,
   midParametersArgs,
   midParametersValues,
   arrArgs,
@@ -12,15 +10,30 @@ module.exports = function urlConstructor(
   var url = baseURL;
   let questionMarkUsed = false;
 
-  if (isById) {
-    url = url + '/' + id;
+  if (midParametersArgs.length > 0) {
+    console.log(midParametersArgs.length)
+    //has midParameters
+    for (let i = 0; i < midParametersArgs.length; i++) {
+      if (midParametersValues[i] !== "") {
+        //If the mid argument has value
+        if (midParametersArgs[i] === "") {
+          //if it's an id, don't have the argument name
+          url = url + "/" + midParametersValues[i];
+          continue;
+        }
+
+        url = url + "/" + midParametersArgs[i] + "/" + midParametersValues[i];
+        continue;
+      }
+
+      url = url + "/" + midParametersArgs[i];
+    }
   }
 
-  if(midParametersArgs.length > 0){
-    url = url + '/' + midParametersArgs[0];
-  }
+  console.log(url)
 
   if (arrArgs.length > 0) {
+    console.log(arrArgsValues)
     for (let i = 0; i < arrArgs.length; i++) {
       if (
         !questionMarkUsed &&
@@ -31,7 +44,7 @@ module.exports = function urlConstructor(
         continue;
       }
 
-      if (arrArgsValues[i] !== '') {
+      if (arrArgsValues[i] !== "") {
         url = url + "&" + arrArgs[i] + "=" + arrArgsValues[i];
       }
     }

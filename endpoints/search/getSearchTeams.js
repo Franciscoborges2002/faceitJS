@@ -2,16 +2,16 @@ const axios = require("axios");
 const urlConstructorUtil = require('../../utils/urlConstructor.js');
 const getHeaders = require('../../utils/headers.js');
 /*
-    Uses url https://open.faceit.com/data/v4/players/
+    Uses url https://open.faceit.com/data/v4/search
     Method: GET
-    Parameters: - game_player_id -> The ID of a player on game's platform
-    Description: Get the hubs from a player
+    Parameters: 
+    Description: 
 */
-module.exports = async function getPlayer(gamePlayerId, offset = 0, limit = 20){
+module.exports = async function getSearchTeams(playerName, game = '' , offset = 0,limit = 20) {
   let apiKey = this.getApiKeyServer();
   let headers = getHeaders(apiKey);
 
-  let baseURL = "https://open.faceit.com/data/v4/players";
+  let baseURL = "https://open.faceit.com/data/v4/search";
 
   let searchOptions = {
     offset: offset,
@@ -19,9 +19,9 @@ module.exports = async function getPlayer(gamePlayerId, offset = 0, limit = 20){
   }
 
   //get url
-  let url = urlConstructorUtil(baseURL, ['', 'hubs'], [gamePlayerId, ''], [], [], searchOptions);
+  let url = urlConstructorUtil(baseURL, ['teams'], [''], ['nickname', 'game'], [playerName, game], searchOptions);
 
-  //try to make the call via axios
+  //try catch to make the call via axios
   try {
     let response = await axios.get(
       url,

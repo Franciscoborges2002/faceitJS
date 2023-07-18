@@ -2,23 +2,23 @@ const axios = require("axios");
 const urlConstructorUtil = require('../../utils/urlConstructor.js');
 const getHeaders = require('../../utils/headers.js');
 /*
-    Uses url https://open.faceit.com/data/v4/players/
+    Uses url https://open.faceit.com/data/v4/matchmakings
     Method: GET
-    Parameters: - game_player_id -> The ID of a player on game's platform
-    Description: Get the info from a player 
+    Parameters: 
+    Description: 
 */
-module.exports = async function getPlayer(gamePlayerId) {
+module.exports = async function getMatchmakingsById(matchmakingID) {
   let apiKey = this.getApiKeyServer();
   let headers = getHeaders(apiKey);
 
-  let baseURL = "https://open.faceit.com/data/v4/players";
+  let baseURL = "https://open.faceit.com/data/v4/matchmakings";
 
   //get url
-  let url = urlConstructorUtil(baseURL, [''], [gamePlayerId], [], [], {});
-  
+  let url = urlConstructorUtil(baseURL, [''], [matchmakingID], [], [], {});
+
   console.log(url)
 
-  //try to make the call via axios
+  //try catch to make the call via axios
   try {
     let response = await axios.get(
       url,

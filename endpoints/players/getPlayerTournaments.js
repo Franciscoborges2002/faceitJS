@@ -19,7 +19,7 @@ module.exports = async function getPlayerTournaments(gamePlayerId, offset = 0, l
   }
 
   //get url
-  let url = urlConstructorUtil(baseURL, true, gamePlayerId, ['tournaments'], [], [], [], searchOptions);
+  let url = urlConstructorUtil(baseURL, ['', 'tournaments'], [gamePlayerId, ''], [], [], searchOptions);
   
   //try catch to make the call via axios
   try {

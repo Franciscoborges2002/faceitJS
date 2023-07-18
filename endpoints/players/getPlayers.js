@@ -16,7 +16,7 @@ module.exports = async function getPlayer(nickname, gameId, gamePlayerId) {
   let baseURL = "https://open.faceit.com/data/v4/players";
 
   //get url
-  let url = urlConstructorUtil(baseURL, false, '', [], [], ['nickname', 'gameId', 'game_player_id'], [nickname, gameId, gamePlayerId], {});
+  let url = urlConstructorUtil(baseURL, [], [], ['nickname', 'gameId', 'game_player_id'], [nickname, gameId, gamePlayerId], {});
 
   //try catch to make the call via axios
   try {

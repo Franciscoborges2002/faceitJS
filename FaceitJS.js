@@ -12,8 +12,11 @@
 /* LEAGUES */
 
 /* MATCHES */
+const getMatchesById = require('./endpoints/matches/getMatchesById.js');
+const getMatchesStats = require('./endpoints/matches/getMatchesStats');
 
 /* MATCHMAKINGS */
+const getMatchmakingsById = require('./endpoints/matchmakings/getMatchmakingsById.js');
 
 /* ORGANIZERS */
 
@@ -27,10 +30,21 @@ const getPlayerTeams = require('./endpoints/players/getPlayerTeams.js');
 const getPlayerTournaments = require('./endpoints/players/getPlayerTournaments.js');
 
 /* RANKINGS */
+const getRanking = require('./endpoints/rankings/getRanking.js');
+const getPositionRanking = require('./endpoints/rankings/getPositionInRanking.js');
 
 /* SEARCH */
+const getSearchChampionships = require('./endpoints/search/getSearchChampionships.js');
+const getSearchHubs = require('./endpoints/search/getSearchHubs.js');
+const getSearchOrganizers = require('./endpoints/search/getSearchOrganizers.js');
+const getSearchPlayers = require('./endpoints/search/getSearchPlayers.js');
+const getSearchTeams = require('./endpoints/search/getSearchTeams.js');
+const getSearchTournaments = require('./endpoints/search/getSearchTournaments.js');
 
 /* TEAMS */
+const getTeamsById = require('./endpoints/teams/getTeamsById.js');
+const getTeamsStats = require('./endpoints/teams/getTeamsStats.js');
+const getTeamsTournaments = require('./endpoints/teams/getTeamsTournaments.js');
 
 /* TOURNMENTS */
 
@@ -91,8 +105,15 @@ class FaceitJS{
 /* LEAGUES */
 
 /* MATCHES */
+FaceitJS.prototype.getMatchesById = getMatchesById;
+FaceitJS.prototype.matchesById = getMatchesById;
+
+FaceitJS.prototype.getMatchesStats = getMatchesStats;
+FaceitJS.prototype.matchesStats = getMatchesStats;
 
 /* MATCHMAKINGS */
+FaceitJS.prototype.getMatchmakingsById = getMatchmakingsById;
+FaceitJS.prototype.matchmakingsById = getMatchmakingsById;
 
 /* ORGANIZERS */
 
@@ -118,10 +139,40 @@ FaceitJS.prototype.getPlayerTournaments = getPlayerTournaments;
 FaceitJS.prototype.playerTournaments = getPlayerTournaments;
 
 /* RANKINGS */
+FaceitJS.prototype.getRanking = getRanking;
+FaceitJS.prototype.ranking = getRanking;
+
+FaceitJS.prototype.getPositionRanking = getPositionRanking;
+FaceitJS.prototype.getPositionPlayer = getPositionRanking;
 
 /* SEARCH */
+FaceitJS.prototype.getSearchChampionships = getSearchChampionships;
+FaceitJS.prototype.searchChampionships = getSearchChampionships;
+
+FaceitJS.prototype.getSearchHubs = getSearchHubs;
+FaceitJS.prototype.searchHubs = getSearchHubs;
+
+FaceitJS.prototype.getSearchOrganizers = getSearchOrganizers;
+FaceitJS.prototype.searchOrganizers = getSearchOrganizers;
+
+FaceitJS.prototype.getSearchPlayers = getSearchPlayers;
+FaceitJS.prototype.searchPlayers = getSearchPlayers;
+
+FaceitJS.prototype.getSearchTeams = getSearchTeams;
+FaceitJS.prototype.searchTeams = getSearchTeams;
+
+FaceitJS.prototype.getSearchTournaments = getSearchTournaments;
+FaceitJS.prototype.searchTournaments = getSearchTournaments;
 
 /* TEAMS */
+FaceitJS.prototype.getTeamsById = getTeamsById;
+FaceitJS.prototype.teamsById = getTeamsById;
+
+FaceitJS.prototype.getTeamsStats = getTeamsStats;
+FaceitJS.prototype.teamsStats = getTeamsStats;
+
+FaceitJS.prototype.getTeamsTournaments = getTeamsTournaments;
+FaceitJS.prototype.teamsTournaments = getTeamsTournaments;
 
 /* TOURNMENTS */
 // #endregion

@@ -19,7 +19,7 @@ module.exports = async function getPlayerTeams(gamePlayerId, offset = 0, limit =
   }
 
   //get url
-  let url = urlConstructorUtil(baseURL, true, gamePlayerId, ['teams'], [], [], [], searchOptions);
+  let url = urlConstructorUtil(baseURL, ['', 'teams'], [gamePlayerId, ''], [], [], searchOptions);
   
   //try catch to make the call via axios
   try {
