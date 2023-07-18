@@ -22,6 +22,9 @@ const getPlayer = require('./endpoints/players/getPlayers.js');
 const getPlayerById = require('./endpoints/players/getPlayersById.js');
 const getPlayerHistory = require('./endpoints/players/getPlayerHistory.js');
 const getPlayerHubs = require('./endpoints/players/getPlayerHubs.js');
+const getPlayerStats = require('./endpoints/players/getPlayerStats.js');
+const getPlayerTeams = require('./endpoints/players/getPlayerTeams.js');
+const getPlayerTournaments = require('./endpoints/players/getPlayerTournaments.js');
 
 /* RANKINGS */
 
@@ -104,6 +107,15 @@ FaceitJS.prototype.playerHistory = getPlayerHistory;
 
 FaceitJS.prototype.getPlayerHubs = getPlayerHubs;
 FaceitJS.prototype.playerHubs = getPlayerHubs;
+
+FaceitJS.prototype.getPlayerStats = getPlayerStats;
+FaceitJS.prototype.playerStats = getPlayerStats;
+
+FaceitJS.prototype.getPlayerTeams = getPlayerTeams;
+FaceitJS.prototype.playerTeams = getPlayerTeams;
+
+FaceitJS.prototype.getPlayerTournaments = getPlayerTournaments;
+FaceitJS.prototype.playerTournaments = getPlayerTournaments;
 
 /* RANKINGS */
 

@@ -5,20 +5,23 @@ const getHeaders = require('../../utils/headers.js');
     Uses url https://open.faceit.com/data/v4/players/
     Method: GET
     Parameters: - game_player_id -> The ID of a player on game's platform
-    Description: Get the info from a player 
+    Description: Get the teams of a player
 */
-module.exports = async function getPlayer(gamePlayerId) {
+module.exports = async function getPlayerTeams(gamePlayerId, offset = 0, limit = 20) {
   let apiKey = this.getApiKeyServer();
   let headers = getHeaders(apiKey);
 
   let baseURL = "https://open.faceit.com/data/v4/players";
 
-  //get url
-  let url = urlConstructorUtil(baseURL, true, gamePlayerId, [], [], [], [], {});
-  
-  console.log(url)
+  let searchOptions = {
+    offset: offset,
+    limit: limit
+  }
 
-  //try to make the call via axios
+  //get url
+  let url = urlConstructorUtil(baseURL, true, gamePlayerId, ['teams'], [], [], [], searchOptions);
+  
+  //try catch to make the call via axios
   try {
     let response = await axios.get(
       url,
