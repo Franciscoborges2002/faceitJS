@@ -11,7 +11,6 @@ module.exports = function urlConstructor(
   let questionMarkUsed = false;
 
   if (midParametersArgs.length > 0) {
-    console.log(midParametersArgs.length)
     //has midParameters
     for (let i = 0; i < midParametersArgs.length; i++) {
       if (midParametersValues[i] !== "") {
@@ -30,11 +29,28 @@ module.exports = function urlConstructor(
     }
   }
 
-  console.log(url)
-
   if (arrArgs.length > 0) {
-    console.log(arrArgsValues)
     for (let i = 0; i < arrArgs.length; i++) {
+      if(Array.isArray(arrArgsValues[i])){//if it is an array
+        if(arrArgsValues[i].length === 0){//if the array has nothing
+          continue;
+        }
+
+        if(!questionMarkUsed){//if the question marked is not used
+          url = url + "?" + arrArgs[i] + '=';//put the name in the url
+          for(let j = 0; j < arrArgsValues[i].length; j++){
+            if(j === 0){
+              url = url + arrArgsValues[i][j];
+              continue;
+            }
+            url = url + ',' + arrArgsValues[i][j];
+          }
+
+          continue;
+        }
+      }
+      
+
       if (
         !questionMarkUsed &&
         (arrArgsValues[i] !== "")

@@ -1,4 +1,4 @@
-A simple package using axios to comunicate with faceit API.
+A simple wrapper of faceit API in js.
 
 Package is not on npm yet!
 
