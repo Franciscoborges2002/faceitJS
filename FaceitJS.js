@@ -27,6 +27,13 @@ const getHubsRules = require('./endpoints/hubs/getHubsRules.js');
 const getHubsStats = require('./endpoints/hubs/getHubsStats.js');
 
 /* LEADERBOARDS */
+const getLeaderboardChampionships = require('./endpoints/leaderboards/getLeaderboardChampionships.js');
+const getLeaderboardChampionshipsByGroup = require('./endpoints/leaderboards/getLeaderboardChampionshipsByGroup.js');
+const getLeaderboardByHub = require('./endpoints/leaderboards/getLeaderboardByHub.js');
+const getLeaderboardByHubGeneral = require('./endpoints/leaderboards/getLeaderboardByHubGeneral.js');
+const getLeaderboardByHubBySeason = require('./endpoints/leaderboards/getLeaderboardByHubBySeason.js');
+const getLeaderboardById = require('./endpoints/leaderboards/getLeaderboardById.js');
+const getLeaderboardByIdByPlayer = require('./endpoints/leaderboards/getLeaderboardByIdByPlayer.js');
 
 /* LEAGUES */
 const getLeaguesById = require('./endpoints/leagues/getLeaguesById.js');
@@ -41,6 +48,12 @@ const getMatchesStats = require('./endpoints/matches/getMatchesStats.js');
 const getMatchmakingsById = require('./endpoints/matchmakings/getMatchmakingsById.js');
 
 /* ORGANIZERS */
+const getOrganizers = require('./endpoints/organizers/getOrganizers.js');
+const getOrganizersById = require('./endpoints/organizers/getOrganizersById.js');
+const getOrganizersByIdChampionships = require('./endpoints/organizers/getOrganizersByIdChampionships.js');
+const getOrganizersByIdGames = require('./endpoints/organizers/getOrganizersByIdGames.js');
+const getOrganizersByIdHubs = require('./endpoints/organizers/getOrganizersByIdHubs.js');
+const getOrganizersByIdTournaments = require('./endpoints/organizers/getOrganizersByIdTournaments.js');
 
 /* PLAYERS */
 const getPlayer = require('./endpoints/players/getPlayers.js');
@@ -184,6 +197,34 @@ FaceitJS.prototype.getHubsStats = getHubsStats;
 FaceitJS.prototype.hubsStats = getHubsStats;
 
 /* LEADERBOARDS */
+FaceitJS.prototype.getLeaderboardChampionships = getLeaderboardChampionships;
+FaceitJS.prototype.leaderboardChampionships = getLeaderboardChampionships;
+
+FaceitJS.prototype.getLeaderboardChampionshipsByGroup = getLeaderboardChampionshipsByGroup;
+FaceitJS.prototype.leaderboardChampionshipsByGroup = getLeaderboardChampionshipsByGroup;
+
+FaceitJS.prototype.getLeaderboardByHub = getLeaderboardByHub;
+FaceitJS.prototype.leaderboardByHub = getLeaderboardByHub;
+FaceitJS.prototype.getLeaderboardByHubId = getLeaderboardByHub;
+FaceitJS.prototype.leaderboardByHubId = getLeaderboardByHub;
+
+FaceitJS.prototype.getLeaderboardByHubGeneral = getLeaderboardByHubGeneral;
+FaceitJS.prototype.leaderboardByHubGeneral = getLeaderboardByHubGeneral;
+FaceitJS.prototype.getLeaderboardByHubIdGeneral = getLeaderboardByHubGeneral;
+FaceitJS.prototype.leaderboardByHubIdGeneral = getLeaderboardByHubGeneral;
+
+FaceitJS.prototype.getLeaderboardByHubBySeason = getLeaderboardByHubBySeason;
+FaceitJS.prototype.leaderboardByHubBySeason = getLeaderboardByHubBySeason;
+FaceitJS.prototype.getLeaderboardByHubBySeason = getLeaderboardByHubBySeason;
+FaceitJS.prototype.leaderboardByHubBySeason = getLeaderboardByHubBySeason;
+
+FaceitJS.prototype.getLeaderboardById = getLeaderboardById;
+FaceitJS.prototype.leaderboardById = getLeaderboardById;
+
+FaceitJS.prototype.getLeaderboardByIdByPlayer = getLeaderboardByIdByPlayer;
+FaceitJS.prototype.leaderboardByIdByPlayer = getLeaderboardByIdByPlayer;
+FaceitJS.prototype.getLeaderboardByPlayer = getLeaderboardByIdByPlayer;
+FaceitJS.prototype.leaderboardByPlayer = getLeaderboardByIdByPlayer;
 
 /* LEAGUES */
 FaceitJS.prototype.getLeaguesById = getLeaguesById;
@@ -215,6 +256,23 @@ FaceitJS.prototype.getMatchmakingsById = getMatchmakingsById;
 FaceitJS.prototype.matchmakingsById = getMatchmakingsById;
 
 /* ORGANIZERS */
+FaceitJS.prototype.getOrganizers = getOrganizers;
+FaceitJS.prototype.organizers = getOrganizers;
+
+FaceitJS.prototype.getOrganizersById = getOrganizersById;
+FaceitJS.prototype.organizersById = getOrganizersById;
+
+FaceitJS.prototype.getOrganizersByIdChampionships = getOrganizersByIdChampionships;
+FaceitJS.prototype.organizersByIdChampionships = getOrganizersByIdChampionships;
+
+FaceitJS.prototype.getOrganizersByIdGames = getOrganizersByIdGames;
+FaceitJS.prototype.organizersByIdGames = getOrganizersByIdGames;
+
+FaceitJS.prototype.getOrganizersByIdHubs = getOrganizersByIdHubs;
+FaceitJS.prototype.irganizersByIdHubs = getOrganizersByIdHubs;
+
+FaceitJS.prototype.getOrganizersByIdTournaments = getOrganizersByIdTournaments;
+FaceitJS.prototype.organizersByIdTournaments = getOrganizersByIdTournaments;
 
 /* PLAYERS */
 FaceitJS.prototype.getPlayer = getPlayer;
