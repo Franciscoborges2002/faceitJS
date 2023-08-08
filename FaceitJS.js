@@ -13,6 +13,10 @@ const getGames = require('./endpoints/games/getGames.js');
 const getGamesMatchmakings = require('./endpoints/games/getGamesMatchmakings.js');
 const getGamesById = require('./endpoints/games/getGamesById.js');
 const getGamesParent = require('./endpoints/games/getGamesParent.js');
+const getGamesQueues = require('./endpoints/games/getGamesQueues.js');
+const getGamesQueuesById = require('./endpoints/games/getGamesQueuesById.js');
+const getGamesQueuesByIdBans = require('./endpoints/games/getGamesQueuesByIdBans.js');
+const getGamesQueuesByIdByRegion = require('./endpoints/games/getGamesQueuesByIdByRegion.js');
 
 /* HUBS */
 const getHubsById = require('./endpoints/hubs/getHubsById.js');
@@ -144,6 +148,19 @@ FaceitJS.prototype.gameById = getGamesById;
 
 FaceitJS.prototype.getGamesParent = getGamesParent;
 FaceitJS.prototype.gamesParent = getGamesParent;
+
+FaceitJS.prototype.getGamesQueues = getGamesQueues;
+FaceitJS.prototype.gamesQueues = getGamesQueues;
+
+FaceitJS.prototype.getGamesQueuesById = getGamesQueuesById;
+FaceitJS.prototype.gamesQueuesById = getGamesQueuesById;
+
+FaceitJS.prototype.getGamesQueuesByIdBans = getGamesQueuesByIdBans;
+FaceitJS.prototype.gamesQueuesByIdBans = getGamesQueuesByIdBans;
+
+FaceitJS.prototype.getGamesQueuesByIdByRegion = getGamesQueuesByIdByRegion;
+FaceitJS.prototype.gamesQueuesByIdByRegion = getGamesQueuesByIdByRegion;
+FaceitJS.prototype.gamesQueuesByRegion = getGamesQueuesByIdByRegion;
 
 /* HUBS */
 FaceitJS.prototype.getHubsById = getHubsById;
