@@ -1,7 +1,5 @@
 A simple wrapper of faceit API in js.
 
-Package is not on npm yet!
-
 # Install
  npm install faceitjs
 
