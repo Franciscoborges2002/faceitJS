@@ -31,7 +31,7 @@ module.exports = async function getHubsById(hubId, expanded) {
     let response = await axios.get(url, headers);
     return response.data;
   } catch (err) {
-    console.log(err.response.data);
-    new Error(err.response.data);
+    //console.error(err.response.data)
+    return new Error(err.response.data);
   }
 };

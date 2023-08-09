@@ -14,21 +14,14 @@ module.exports = async function getHubsRules(hubId) {
   let baseURL = "https://open.faceit.com/data/v4/hubs";
 
   //get url
-  let url = urlConstructorUtil(
-    baseURL,
-    ["", "rules"],
-    [hubId, ""],
-    [],
-    [],
-    {}
-  );
+  let url = urlConstructorUtil(baseURL, ["", "rules"], [hubId, ""], [], [], {});
 
   //try catch to make the call via axios
   try {
     let response = await axios.get(url, headers);
     return response.data;
   } catch (err) {
-    console.log(err.response.data);
-    new Error(err.response.data);
+    //console.error(err.response.data)
+    return new Error(err.response.data);
   }
 };

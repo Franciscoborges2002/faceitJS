@@ -21,7 +21,7 @@ module.exports = async function getOrganizersById(organizerId) {
     let response = await axios.get(url, headers);
     return response.data;
   } catch (err) {
-    console.log(err.response.data);
-    new Error(err.response.data);
+    //console.error(err.response.data)
+    return new Error(err.response.data);
   }
 };

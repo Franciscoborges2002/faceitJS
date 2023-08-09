@@ -7,12 +7,15 @@ const getHeaders = require("../../utils/headers.js");
     Parameters: -expanded {lis of name to expand in the request} possible names: organizer, game.
     Description: 
 */
-module.exports = async function getLeagueByPlayersId(leagueId, seasonId, playersId) {
+module.exports = async function getLeagueByPlayersId(
+  leagueId,
+  seasonId,
+  playersId
+) {
   let apiKey = this.getApiKeyServer();
   let headers = getHeaders(apiKey);
 
   let baseURL = "https://open.faceit.com/data/v4/leagues";
-
 
   //get url
   let url = urlConstructorUtil(
@@ -23,14 +26,14 @@ module.exports = async function getLeagueByPlayersId(leagueId, seasonId, players
     [],
     {}
   );
-  console.log(url)
+  console.log(url);
 
   //try catch to make the call via axios
   try {
     let response = await axios.get(url, headers);
     return response.data;
   } catch (err) {
-    console.log(err.response.data);
-    new Error(err.response.data);
+    //console.error(err.response.data)
+    return new Error(err.response.data);
   }
 };

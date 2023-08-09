@@ -9,12 +9,12 @@ const getHeaders = require("../../utils/headers.js");
 */
 module.exports = async function getOrganizersByIdTournaments(
   organizerId,
-  type = '',
+  type = "",
   offset = 0,
   limit = 20
 ) {
-  if(!(type === '' || type === 'past' || type === 'upcoming')){
-    return {error: "type must be: '', 'past' or 'upcoming'"}
+  if (!(type === "" || type === "past" || type === "upcoming")) {
+    return { error: "type must be: '', 'past' or 'upcoming'" };
   }
 
   let apiKey = this.getApiKeyServer();
@@ -37,14 +37,12 @@ module.exports = async function getOrganizersByIdTournaments(
     searchOptions
   );
 
-  console.log(url);
-
   //try catch to make the call via axios
   try {
     let response = await axios.get(url, headers);
     return response.data;
   } catch (err) {
-    console.log(err.response.data);
-    new Error(err.response.data);
+    //console.error(err.response.data)
+    return new Error(err.response.data);
   }
 };

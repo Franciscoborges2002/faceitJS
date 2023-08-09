@@ -4,7 +4,8 @@ const getHeaders = require('../../utils/headers.js');
 /*
     Uses url https://open.faceit.com/data/v4/championships
     Method: GET
-    Parameters: -expanded {lis of name to expand in the request} possible names: organizer, game.
+    Parameters: - championshipId : string
+                - expanded : Array        -> possible values: --(nothing),organizer, game.
     Description: 
 */
 module.exports = async function getChampionshipsById(championshipId, expanded) {
@@ -29,7 +30,7 @@ module.exports = async function getChampionshipsById(championshipId, expanded) {
     );
     return response.data;
   } catch (err) {
-    console.log(err.response.data);
-    new Error(err.response.data);
+    //console.error(err.response.data)
+    return new Error(err.response.data);
   }
 };

@@ -82,7 +82,17 @@ const getTeamsStats = require('./endpoints/teams/getTeamsStats.js');
 const getTeamsTournaments = require('./endpoints/teams/getTeamsTournaments.js');
 
 /* TOURNMENTS */
+const getTournaments = require('./endpoints/tournaments/getTournaments.js');
+const getTournamentsById = require('./endpoints/tournaments/getTournamentsById.js');
+const getTournamentsByIdBrackets = require('./endpoints/tournaments/getTournamentsByIdBrackets.js');
+const getTournamentsByIdMatches = require('./endpoints/tournaments/getTournamentsByIdMatches.js');
+const getTournamentsByIdTeams = require('./endpoints/tournaments/getTournamentsByIdTeams.js');
 
+/* CHAT API */
+/* ROOM */
+const getRoomById = require('./endpoints/rooms/getRoomById.js');
+const getRoomByIdMessages = require('./endpoints/rooms/getRoomByIdMessages.js');
+const postRoomByIdMessage = require('./endpoints/rooms/postRoomByIdMessage.js');
 // #endregion
 
 //***** CLASS *****//
@@ -335,6 +345,43 @@ FaceitJS.prototype.getTeamsTournaments = getTeamsTournaments;
 FaceitJS.prototype.teamsTournaments = getTeamsTournaments;
 
 /* TOURNMENTS */
+FaceitJS.prototype.getTournaments = getTournaments;
+FaceitJS.prototype.tournaments = getTournaments;
+
+FaceitJS.prototype.getTournamentsById = getTournamentsById;
+FaceitJS.prototype.tournamentsById = getTournamentsById;
+FaceitJS.prototype.getTournamentById = getTournamentsById;
+FaceitJS.prototype.tournamentById = getTournamentsById;
+
+FaceitJS.prototype.getTournamentsByIdBrackets = getTournamentsByIdBrackets;
+FaceitJS.prototype.tournamentsByIdBrackets = getTournamentsByIdBrackets;
+FaceitJS.prototype.getTournamentsBrackets = getTournamentsByIdBrackets;
+FaceitJS.prototype.tournamentsBrackets = getTournamentsByIdBrackets;
+
+FaceitJS.prototype.getTournamentsByIdMatches = getTournamentsByIdMatches;
+FaceitJS.prototype.tournamentsByIdMatches = getTournamentsByIdMatches;
+FaceitJS.prototype.getTournamentsMatches = getTournamentsByIdMatches;
+FaceitJS.prototype.tournamentsMatches = getTournamentsByIdMatches;
+
+FaceitJS.prototype.getTournamentsByIdTeams = getTournamentsByIdTeams;
+FaceitJS.prototype.ournamentsByIdTeams = getTournamentsByIdTeams;
+FaceitJS.prototype.getTournamentsTeams = getTournamentsByIdTeams;
+FaceitJS.prototype.ournamentsTeams = getTournamentsByIdTeams;
+
+/* CHAT API */
+/* ROOM */
+FaceitJS.prototype.getRoomById = getRoomById;
+FaceitJS.prototype.roomById = getRoomById;
+
+FaceitJS.prototype.getRoomByIdMessages = getRoomByIdMessages;
+FaceitJS.prototype.roomByIdMessages = getRoomByIdMessages;
+
+FaceitJS.prototype.postRoomByIdMessage = postRoomByIdMessage;
+FaceitJS.prototype.roomByIdMessage = postRoomByIdMessage;
+FaceitJS.prototype.postRoomMessage = postRoomByIdMessage;
+FaceitJS.prototype.roomMessage = postRoomByIdMessage;
+FaceitJS.prototype.postMessage = postRoomByIdMessage;
+FaceitJS.prototype.message = postRoomByIdMessage;
 // #endregion
 
 //***** EXPORT *****//

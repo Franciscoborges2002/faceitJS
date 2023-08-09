@@ -7,10 +7,7 @@ const getHeaders = require("../../utils/headers.js");
     Parameters: -expanded {lis of name to expand in the request} possible names: organizer, game.
     Description: 
 */
-module.exports = async function getLeaderboardById(
-  leaderboardId,
-  playerId
-) {
+module.exports = async function getLeaderboardById(leaderboardId, playerId) {
   let apiKey = this.getApiKeyServer();
   let headers = getHeaders(apiKey);
 
@@ -26,14 +23,14 @@ module.exports = async function getLeaderboardById(
     {}
   );
 
-  console.log(url)
+  console.log(url);
 
   //try catch to make the call via axios
   try {
     let response = await axios.get(url, headers);
     return response.data;
   } catch (err) {
-    console.log(err.response.data);
-    new Error(err.response.data);
+    //console.error(err.response.data)
+    return new Error(err.response.data);
   }
 };
